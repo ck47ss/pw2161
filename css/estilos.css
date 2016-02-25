@@ -1,0 +1,40 @@
+body
+{
+	background: black;
+	color: gray;     		/*COLOR RGB*/
+	margin: 0 auto;
+	max-width: 1024px;		/*ANCHO MAXIMO*/
+	/*color: hotpink;*/
+	
+}
+
+body header
+{
+background: black ; 	/* FONDO*/
+border: 1px solid gray; /* BORDER ALREDEDOR*/
+border-radius: 5px;		/*ESQUINAS PIXELES*/
+color:  white;			/* LETRAS*/
+}
+
+body header h1
+{
+text-align: center;		/* ALINEADO AL CENTRO */
+}
+
+body header nav ul li
+{
+	/*border: 1px solid gray; */
+	background: yellow;
+	border-radius: 5px;
+	color: black;
+	display: inline-block;
+	text-align:  center;
+	margin: 0px 55px;
+	padding: 10px;
+}
+
+body header nav ul li:hover
+{
+	background: orange;
+	color: white;
+}
