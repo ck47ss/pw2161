@@ -2,13 +2,21 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<svg class="icon icon-twitch"><use xlink:href="#icon-twitch"></use></svg>
 	<link rel="stylesheet" type="" href="css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
 	<title> PRIMER PAGINA HTML5 </title> 	
 </head>
 <body>  
 
 <header>
-	<h1>Mi aplicacion </h1>
+	<img src="OS/Applications/XAMPP/xamppfiles/htdocs/pw2161/icomoon_6_icons" alt="">
+	<h1>
+	<span class="icon-home">
+	Mi aplicacion 
+	</span>
+	</h1>
 	<nav>
 		<ul>
 			<li>Opcion 1</li>	
@@ -21,10 +29,21 @@
 </header>
 
 <main>
-<section> 
 
-	
-<article>
+<section> 
+	<article>
+		<h1>Articulo de loremipsum</h1>
+	dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</article>
+</section>
+
+<section> 
+	<article>
 		<h2>Articulo de loremipsum</h2>
 	dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -32,19 +51,34 @@
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</article>
+	</article>
 </section>
 
 <section>
 <article>
-	ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
+<br>
+HTML5
+	<form action="" method="">
+	Escribe algo aqui: <br>
+	<input type="password" placeholder="Escribe algo aqui" size=8 maxlength="8" autofocus><br>
+	<input type="date" required><br>
+	<input type="number" max=10 min=0 required>
+	<input type="email" required="">
+	<input type="radio" name="Genero" value="0">Femenino
+	<input type="radio" name="Genero" value="1">Masculino
+
+
+	<select name="Genero2" id="">
+	<option value="">Femenino </option>
+	<option value="">Masculino </option>
+	<option value="">Otros</option>
+	</select>
+	<input type="submit" required="">
+</form>	
+
 </article>
  </section>
+ </article>
 
 <section> 
 texto libre
@@ -55,6 +89,8 @@ texto libre
 	se recomienda la secciones y si vas a poner
 	solo articulos,mejor que sean secciones.
 </article>
+
+
 </main>
 <footer>
 	<small>&copy; Programacion web 2016</small>

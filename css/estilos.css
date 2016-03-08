@@ -1,17 +1,25 @@
+
 body
 {
+	font-family: 'Courgette', cursive;
 	background: black;
-	color: gray;     		/*COLOR RGB*/
+	color: yellow ;     		/*COLOR RGB*/
 	margin: 0 auto;
 	max-width: 1024px;		/*ANCHO MAXIMO*/
 	/*color: hotpink;*/
 	
 }
 
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
 body header
 {
 background: black ; 	/* FONDO*/
-border: 1px solid gray; /* BORDER ALREDEDOR*/
+border: 1px solid yellow; /* BORDER ALREDEDOR*/
 border-radius: 5px;		/*ESQUINAS PIXELES*/
 color:  white;			/* LETRAS*/
 }
@@ -37,4 +45,14 @@ body header nav ul li:hover
 {
 	background: orange;
 	color: white;
+}
+section article h1
+{
+	font-family: 'Permanent Marker', cursive;
+	background: red;
+}
+section article h2
+{
+	font-family: 'Cedarville Cursive', cursive;
+	background: red;
 }
