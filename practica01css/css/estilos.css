@@ -35,6 +35,43 @@ text-align: center;
 
 }
 
+#seccion02 article
+{
+
+	display: inline-block;
+	vertical-align: top;
+	width: 32.8%;
+}
+
+ #seccion02 form input[type="submit"]
+{
+	background: black;
+	color:blue;
+}
+.unaseccion
+{
+	font-size: 4em;
+	font-weight: bold;/* NEGRITAS */
+}
+#seccion01 article
+{
+	margin: 0 auto;
+}
+
+.otraseccion,.unaseccion
+{
+font-weight: bold; /* NEGRITAS */
+}
+.otraseccion
+{
+	font-size: 4em;
+	
+}
+.unaseccion
+{
+	font-size: 4.5em;
+}
+
 form
 {
 	float: right;
@@ -48,7 +85,7 @@ form input
 border-radius: 5px;
 }
 
-form input[type="search"]
+
 {
 	background: white;
 	color:green;
