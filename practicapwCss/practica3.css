@@ -1,0 +1,25 @@
+body 
+{	
+
+	color: red;
+	margin:0 auto;
+}
+
+body header #portada
+{	
+	margin-top: 20px;
+}		
+header nav 
+{	
+
+	color: blue;
+	display: inline-block;
+	margin-right: 20px;
+}		
+
+header nav ul li
+{	
+	color: red;
+	display: inline-block;
+	margin-right: 20px;
+}		
