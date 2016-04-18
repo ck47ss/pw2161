@@ -1,0 +1,17 @@
+body table 
+{
+
+background-color: blue;
+border-spacing: 0px;
+
+
+}
+
+#borde
+{
+	/*border-collapse: collapse; */
+	border:none;
+	background-color: red;
+	border-spacing: 5px;
+
+}
