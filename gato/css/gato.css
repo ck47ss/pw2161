@@ -1,17 +1,104 @@
-body table 
+
+body
 {
 
+}
+body table tr
+{
+border: 1px solid #000;
+/*border:none;
+color: white;
+padding-left: 106px;
 background-color: blue;
 border-spacing: 0px;
 
-
+border-top: 1px hidden;
+border-bottom: 1px hidden;
+*/
 }
-
-#borde
+/*COLUMNA 1*/
+#col11
 {
-	/*border-collapse: collapse; */
-	border:none;
-	background-color: red;
-	border-spacing: 5px;
-
+	border-bottom: solid blue;
+	border-left: none;
+	border-right: solid blue;
+	border-top: none;
+	
 }
+
+#col12
+{
+	border-bottom: solid blue;
+	border-left: solid blue;
+	border-right: solid blue;
+	border-top: none;
+}
+
+#col13
+{	
+	border-bottom: solid blue;
+	border-left: solid blue;
+	border-right: none;
+	border-top: none;
+}
+/*COLUMNA 2 */
+#col21
+{	
+	border-bottom: solid blue;
+	border-left: none;
+	border-right: solid blue;
+	border-top: solid blue;
+}
+
+#col22
+{	
+	border-bottom: solid blue;
+	border-left: solid blue;;
+	border-right:solid blue;
+	border-top: solid blue;
+}
+
+#col23
+{	
+	border-bottom: solid blue;
+	border-left: solid blue;
+	border-right:none;
+	border-top: solid blue;
+}
+/* COLUMNA 3 */
+#col31
+{	
+	border-bottom: none;
+	border-left: none;
+	border-right: solid blue;;
+	border-top: solid blue;;
+}
+
+
+#col32
+{	
+	border-bottom: none;
+	border-left: solid blue;;
+	border-right: solid blue;;
+	border-top: solid blue;;
+}
+
+
+#col33
+{	
+
+	border-bottom: none;
+	border-left: solid blue;;
+	border-right: none;
+	border-top: solid blue;;
+}
+
+
+
+
+
+
+
+
+
+
