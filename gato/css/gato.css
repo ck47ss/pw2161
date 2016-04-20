@@ -1,20 +1,18 @@
 
-body
+body table 
 {
-
+margin: 0 auto;
+width: 1105px;
+height: 860px;
+border-collapse: collapse;
 }
-body table tr
-{
-border: 1px solid #000;
-/*border:none;
-color: white;
-padding-left: 106px;
-background-color: blue;
-border-spacing: 0px;
 
-border-top: 1px hidden;
-border-bottom: 1px hidden;
-*/
+
+body table tr td input[type="button"]
+{
+	background-color: gray;
+	width: 380px;
+	height: 300px;
 }
 /*COLUMNA 1*/
 #col11
