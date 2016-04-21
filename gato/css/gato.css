@@ -2,16 +2,17 @@
 body table 
 {
 margin: 0 auto;
-width: 1105px;
-height: 860px;
+width: 1050px;
+height: 840px;
 border-collapse: collapse;
 }
 
 
 body table tr td input[type="button"]
 {
+	font-size: 200px;
 	background-color: gray;
-	width: 380px;
+	width: 370px;
 	height: 300px;
 }
 /*COLUMNA 1*/
