@@ -1,0 +1,43 @@
+body
+{
+
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+header
+{
+	text-align: center;
+
+}
+
+section article table
+{
+	border-collapse: collapse;
+	font-size: 5em;
+	margin:0 auto;
+}
+
+section article table td
+{
+	text-align: center;
+	width: 100px;
+}
+
+#uno.1,#uno.2,#uno.3,#dos.1,#dos.2
+{
+	border-bottom: 8px solid red;
+	border-right: 8px solid red;
+}
+
+#uno.1,#uno.1,#dos.1,#dos.2
+{
+	border-bottom: 8px solid red;
+	border-right: 8px solid red;
+}
+
+#uno.3,#dos.3
+ {
+ 	
+ }
