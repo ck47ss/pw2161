@@ -16,13 +16,14 @@ section article table
 {
 	border-collapse: collapse;
 	font-size: 5em;
-	margin:0 auto;
+	margin:10 auto;
 }
 
 section article table td
 {
 	text-align: center;
 	width: 100px;
+	border: 5px;	
 }
 
 #uno.1,#uno.2,#uno.3,#dos.1,#dos.2
