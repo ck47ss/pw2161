@@ -1,0 +1,32 @@
+body
+{
+	margin: 0 auto;
+	background-color: black;
+	padding: 212px,201px,041px,214px;
+	margin-left: 820px;
+	height: 2100px;
+	width: 210px;
+}
+
+body h2
+{
+font-size: 15px;
+background-color: blue  ;
+align-content: center;
+width: 125px;
+height: 44px;
+}
+
+
+article
+{
+	width: 1024px;
+}
+#fotopersona
+{
+	border-radius: 5px;
+	border-color: red;
+	width: 105px;
+	align-content: center;
+}
+
