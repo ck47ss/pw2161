@@ -18,19 +18,44 @@ var iniciaApp = function()
 			$("#txtClave").focus();
 		}
 		//2.- VERIFICAR USUARIO Y CONTRASEÑA
+			var parametros="accion=validarEntrada"+
+							"&usuario="+usuario+
+							"&clave="+clave+
+							"&id="+Math.random();
+		$.ajax({
+			beforeSend:function(){
+				console.log("VALIDAR AL USUARIO ");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url:"php/funciones.php"
+			data:parametros,
+			success: function(response){
 
-		if(usuario=="pw" && clave=="1234"){
+			},
+		}
+		error: function(xhr,ajaxOptionx,thrownError){
+			console.log("ALGO SALIO MAL ");
+		}
+
+	 });
+		console.log("Se disparo el submit");
+		/*if(usuario=="pw" && clave=="1234"){
 		 	//alert("BIENVENIDO "+usuario);
 		 	$("#datosusuario").hide();// ESCONDEMOS
 		 	$("nav").show("slow"); // MOSTRAMOS
 
 		 	//DAR ENTRADA AL USUARIO
-
+		
 		 }
 		 else
 		 	alert("USUARIO O CONTRASEÑA INCORRECTA ");
 		console.log("Se disparó el submit");
 	}
+
+	*/
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 }
 $(document).on("ready",iniciaApp);
+
