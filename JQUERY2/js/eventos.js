@@ -32,9 +32,19 @@ var iniciaApp = function()
 			url:"php/funciones.php"
 			data:parametros,
 			success: function(response){
+				if (response.respuesta==true) 
+				{
+					$("#datosusuario").hide();
+					$("nav").show("slow");
+
+				}
+				else
+				{
+					alert("DATOS INCORRECTOS");
+				}
 
 			},
-		}
+		
 		error: function(xhr,ajaxOptionx,thrownError){
 			console.log("ALGO SALIO MAL ");
 		}
