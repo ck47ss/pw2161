@@ -29,8 +29,8 @@ var iniciaApp = function()
 			cache: false,
 			type: "POST",
 			dataType: "json",
-			url:"php/funciones.php"
-			data:parametros,
+			url:"php/funciones.php",
+			data:parametros, 
 			success: function(response){
 				if (response.respuesta==true) 
 				{
@@ -53,8 +53,10 @@ var iniciaApp = function()
 		console.log("Se disparo el submit");
 		/*if(usuario=="pw" && clave=="1234"){
 		 	//alert("BIENVENIDO "+usuario);
-		 	$("#datosusuario").hide();// ESCONDEMOS
-		 	$("nav").show("slow"); // MOSTRAMOS
+		 
+		 	("#datosusuario").hide();// ESCONDEMOS
+		 	
+		 	//$("nav").show("slow"); // MOSTRAMOS
 
 		 	//DAR ENTRADA AL USUARIO
 		
@@ -62,9 +64,10 @@ var iniciaApp = function()
 		 else
 		 	alert("USUARIO O CONTRASEÑA INCORRECTA ");
 		console.log("Se disparó el submit");
+	*/	
 	}
 
-	*/
+	
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 }
 $(document).on("ready",iniciaApp);
