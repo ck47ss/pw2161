@@ -60,7 +60,9 @@ $accion=$_POST["accion"];
 switch ( $accion) {
 	case 'validarEntrada':
 		validaentrada();
-		//$("#datosusuario").hide();
+		break;
+	case 'guardaUsuario':
+		guardaUsuario();
 		break;
 	
 	default:

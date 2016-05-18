@@ -67,8 +67,89 @@ var iniciaApp = function()
 	*/	
 	}
 
-	
+	var altas = function()
+
+
+	{
+		//MOSTRAMOS EL FORMULARIO
+		$("#altausuarios").show("slow");
+
+	}
+
+	var guardaUsuario = function()
+	{
+		$usuario= GetSQLValueString($_POST["txtnombreusuario"],"text");
+		$clave= GetSQLValueString(md5($_POST["txtclave"]),"text");
+		$tipo= GetSQLValueString(md5($_POST["txtipoususario"]),"text");
+		$depto= GetSQLValueString(md5($_POST["txtdepartamento"]),"long");
+		$respuesta=false;
+		/
+
+		//CONECTAR AL SERVIDOR DE DB
+		//SERVIDOR,USUARIO,CLAVE
+		$conexion =mysql_connect("localhost","root","");
+
+		//SELECCIONAR LA BD
+		mysql_select_db("usuarios");
+		$guarda = sprintf("insert into usuarios values(%s,%s,%s,%d)",$usuario,$clave,$tipo,$depto);
+
+		//EJECUTAMOS LA CONSULTA 
+		mysql_query($guarda);
+		//CUANTOS REGISTROS FUERON AFECTGADOS
+		if (mysql_affected_rows()>0)
+		 {
+		 	$respuesta=true;
+		 }
+		 $salidaJSON = array('respuesta'=> $respuesta);
+		 print json_encode($salidaJSON);
+	}
+	var Altausuarios = function()
+	{
+		event.preventDefault();
+		alert($("#frmAltaUsuarios").serialize());
+		var datos = $("#frmAltaUsuarios").serialize();
+		var parametros ="accion=guardaUsuario&"+datos+"&id="+Math.random();
+
+		$.ajax({
+			beforeSend:function(){
+				console.log("VALIDAR AL USUARIO ");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url:"php/funciones.php",
+			data:parametros, 
+			success: function(response){
+
+
+				if (response.respuesta==true) 
+				{
+					alert("USUARIO REGISTRADO CORRECTAMENTE ");
+
+				}
+				else
+				{
+					alert("DATOS INCORRECTOS");
+				}
+
+			},
+		
+		error: function(xhr,ajaxOptionx,thrownError){
+			console.log("ALGO SALIO MAL ");
+		}
+
+	 });
+
+		//MOSTRAMOS EL FORMULARIO
+	}
+
 	$("#frmValidaEntrada").on("submit",validarEntrada);
+	$("#btnaltas").on("submit",altas);
+	$("btnaltausuario","click",altausuarios);
+
+	
+
+	
 }
 $(document).on("ready",iniciaApp);
 
