@@ -14,9 +14,9 @@
 		<nav>
 			<ul> 
 				<li><button class="btn btn-default">Inicio</button></li>
-				<li><button class="btn btn-primary">Altas</button></li>
-				<li><button class="btn btn-primary">Bajas</button></li>
-				<li><button class="btn btn-warning">Cambios</button></li>
+				<li><button class="btnaltas">Altas</button></li>
+				<li><button class="btnbajas">Bajas</button></li>
+				<li><button id=""class="btn btn-warning">Cambios</button></li>
 				<li><button class="btn btn-danger">Consultas</button></li>
 				<li><button class="btn btn-info">Salir</button></li>
 			</ul>
@@ -53,19 +53,19 @@
 						<option value="Baja">Baja</option>
 					</select>
 
+
 					<input type="text" class="form-control" id="txtdepartamento" placeholder="Tipo de Departamento" required>
 					
 
-					<input type="submit" class="btn-success btn-lg btn-block" id="btnaltausuario" placeholder="Enviar" required>
-					
-					
-
-
-
-
-
-
+					<input type="submit" class="btn-success btn-lg btn-block" id="btnaltausuario" name="btnaltausuario" placeholder="Enviar" required>
+			
 				</form>
+			</article>	
+
+			<article id="consultausuarios">
+				<table class="table table-striped name="tablaconsultas"id="tablaconsultas">
+					
+				</table>
 			</article>
 		</section>
 	</main>

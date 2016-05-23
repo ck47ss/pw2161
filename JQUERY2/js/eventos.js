@@ -67,42 +67,8 @@ var iniciaApp = function()
 	*/	
 	}
 
-	var altas = function()
-
-
-	{
-		//MOSTRAMOS EL FORMULARIO
-		$("#altausuarios").show("slow");
-
-	}
-
-	var guardaUsuario = function()
-	{
-		$usuario= GetSQLValueString($_POST["txtnombreusuario"],"text");
-		$clave= GetSQLValueString(md5($_POST["txtclave"]),"text");
-		$tipo= GetSQLValueString(md5($_POST["txtipoususario"]),"text");
-		$depto= GetSQLValueString(md5($_POST["txtdepartamento"]),"long");
-		$respuesta=false;
-		/
-
-		//CONECTAR AL SERVIDOR DE DB
-		//SERVIDOR,USUARIO,CLAVE
-		$conexion =mysql_connect("localhost","root","");
-
-		//SELECCIONAR LA BD
-		mysql_select_db("usuarios");
-		$guarda = sprintf("insert into usuarios values(%s,%s,%s,%d)",$usuario,$clave,$tipo,$depto);
-
-		//EJECUTAMOS LA CONSULTA 
-		mysql_query($guarda);
-		//CUANTOS REGISTROS FUERON AFECTGADOS
-		if (mysql_affected_rows()>0)
-		 {
-		 	$respuesta=true;
-		 }
-		 $salidaJSON = array('respuesta'=> $respuesta);
-		 print json_encode($salidaJSON);
-	}
+	
+	
 	var Altausuarios = function()
 	{
 		event.preventDefault();
@@ -140,14 +106,105 @@ var iniciaApp = function()
 
 	 });
 
+		var altas = function()
+		{
+		//MOSTRAMOS EL FORMULARIO
+		$("altausuarios").show("slow");
+		$("altausuarios h2").html("alta usuarios");
+		//ENCIENDO LA FUNCION DE ALTA USUARIO
+		$("frmAltaUsuarios").on("submit",Altausuarios);
+		//APAGO LA FUNCION DE BAJUSUARIO PARA EL MISMO BOTON
+		$("frmAltaUsuarios").off("submit",Bajausuario);
+
+		}
+
+		var bajas = function()
+		{	
+			$("altausuarios").show("slow");
+			$("altausuarios h2").html("baja usuarios");
+			//APAGADO LA FUNCION DE ALTA USUARIO
+			$("frmAltaUsuarios").on("submit",Bajausuario);
+			//ENCIENDO LA FUNCION DE BAJUSUARIO PARA EL MISMO BOTON
+			$("frmAltaUsuarios").off("submit",Bajausuario);
+		}
 		//MOSTRAMOS EL FORMULARIO
 	}
 
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 	$("#btnaltas").on("submit",altas);
 	$("btnaltausuario","click",altausuarios);
+	$("frmAltaUsuarios").on("submit",Altausuarios);
+	$("#btnbajas").on("click",bajas);
+	$("#btnconsultas").on("click",consultas);
 
-	
+	var consultas = function()
+	{
+		$("#consultausuarios").show("slow");
+		var parametros = "accion=consultas"+
+						 "&id="+Math.random();
+
+
+		$.ajax({
+			beforeSend:function(){
+				console.log(" CONSULTAS USUARIOS ");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url:"php/funciones.php",
+			data:parametros, 
+			success: function(response){
+
+			},
+		
+		error: function(xhr,ajaxOptionx,thrownError){
+			console.log("AH OCURRIDO UN ERROR ");
+			}
+
+		});
+
+	 }
+
+
+	var Bajausuario = function()
+	{
+		event.preventDefault();
+
+		//var datos = $("#frmAltaUsuarios").serialize();
+		var datos ="txtUsuario=+$"("#txtUsuario").val();
+		var parametros ="accion=BajaUsuario&"+datos+"&id="+Math.random();
+
+		$.ajax({
+			beforeSend:function(){
+				console.log("Baja al usuario");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url:"php/funciones.php",
+			data:parametros, 
+			success: function(response){
+
+
+				if (response.respuesta==true) 
+				{
+					alert("USUARIO DADO DE BAJA CORRECTAMENTE ");
+
+				}
+				else
+				{
+					alert("NO SE PUDO DAR DE BAJA LA INFORMACION");
+				}
+
+			},
+		
+		error: function(xhr,ajaxOptionx,thrownError){
+			console.log("ALGO SALIO MAL ");
+		}
+
+	 });
+
+	}
 
 	
 }
