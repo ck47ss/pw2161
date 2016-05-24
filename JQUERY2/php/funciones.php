@@ -116,13 +116,15 @@ function consultas()
 	 	$tabla.="<th>Usuario</th>";
 		$tabla.="<th>Tipo Usuario"
 		$tabla.="<th>Departamento</th>";
+		$tabla.="<th>Acciones</th>";
 		$tabla.="</tr>"
 		while($registro = mysql_fetch_array(resultado))
 		{
 			$tabla.="<tr>";
 			$tabla.="<td>.$registro["usuario"].</td>";
 			$tabla.="<td>.$registro["tipousuario"]";
-			$tabla.="<td>.$registro["Departamento"]";
+			$tabla.="<td>.$registro["Departamento"]</td>";
+			$tabla.="<td><button id=".$registro["usuario"]."' class='btn btn-danger'> Baja </button></td>";
 			$tabla.="</tr>";
 		}
 	}

@@ -131,39 +131,28 @@ var iniciaApp = function()
 	}
 
 	$("#frmValidaEntrada").on("submit",validarEntrada);
-	$("#btnaltas").on("submit",altas);
-	$("btnaltausuario","click",altausuarios);
-	$("frmAltaUsuarios").on("submit",Altausuarios);
+	$("#btnaltas").on("click",altausuarios);
+	//$("btnaltausuario","click",altausuarios);
+	$("#frmAltaUsuarios").on("submit",Altausuarios);
 	$("#btnbajas").on("click",bajas);
 	$("#btnconsultas").on("click",consultas);
 
-	var consultas = function()
+
+	//EVENTOS DINAMICOS
+	$("tablaconsultas").on("type[button]","click",bajadinamica);
+
+	//OTRA FORMA DE HACERLO
+	//∫$("#tablaconsultas >input").on("click",bajadinamica);
+	
+	var bajadinamica = function()
 	{
-		$("#consultausuarios").show("slow");
-		var parametros = "accion=consultas"+
-						 "&id="+Math.random();
+
+		var usuario = $(this).attr("id");
+		alert(usuario);
+
+	}
 
 
-		$.ajax({
-			beforeSend:function(){
-				console.log(" CONSULTAS USUARIOS ");
-			},
-			cache: false,
-			type: "POST",
-			dataType: "json",
-			url:"php/funciones.php",
-			data:parametros, 
-			success: function(response){
-
-			},
-		
-		error: function(xhr,ajaxOptionx,thrownError){
-			console.log("AH OCURRIDO UN ERROR ");
-			}
-
-		});
-
-	 }
 
 
 	var Bajausuario = function()
@@ -172,7 +161,8 @@ var iniciaApp = function()
 
 		//var datos = $("#frmAltaUsuarios").serialize();
 		var datos ="txtUsuario=+$"("#txtUsuario").val();
-		var parametros ="accion=BajaUsuario&"+datos+"&id="+Math.random();
+		var parametros ="accion=BajaUsuario&"+datos+
+						"&id="+Math.random();
 
 		$.ajax({
 			beforeSend:function(){
@@ -205,6 +195,42 @@ var iniciaApp = function()
 	 });
 
 	}
+
+
+	var consultas = function()
+	{
+		$("#consultausuarios").show("slow");
+		var parametros = "accion=consultas"+
+						 "&id="+Math.random();
+
+
+		$.ajax({
+			beforeSend:function(){
+				console.log(" CONSULTAS USUARIOS ");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url:"php/funciones.php",
+			data:parametros, 
+			success: function(response){
+
+			},
+		
+		error: function(xhr,ajaxOptionx,thrownError){
+			console.log("AH OCURRIDO UN ERROR ");
+			}
+
+		});
+
+	 }
+	$("#frmValidaEntrada").on("submit",validarEntrada);
+	$("#btnaltas").on("click",altas);
+	//$("btnaltausuario","click",altausuarios);
+	$("#frmAltaUsuarios").on("submit",Altausuarios);
+	$("#btnbajas").on("click",Bajausuarios);
+	$("#btnconsultas").on("click",consultas);
+
 
 	
 }
