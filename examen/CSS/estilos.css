@@ -1,0 +1,11 @@
+body
+{
+	margin: 0 auto;
+	border-color: red;
+	background: gray;
+}
+
+body nav ul li 
+{
+	display: inline-block;
+}

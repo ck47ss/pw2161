@@ -14,10 +14,10 @@
 		<nav>
 			<ul> 
 				<li><button class="btn btn-default">Inicio</button></li>
-				<li><button class="btnaltas">Altas</button></li>
-				<li><button class="btnbajas">Bajas</button></li>
-				<li><button id=""class="btn btn-warning">Cambios</button></li>
-				<li><button class="btn btn-danger">Consultas</button></li>
+				<li><button id="btnAltas" class="btn btn-primary">Altas</button></li>
+				<li><button id="btnBajas" class="btn btn-primary">Bajas</button></li>
+				<li><button class="btn btn-warning">Cambios</button></li>
+				<li><button id="btnConsultas" class="btn btn-danger">Consultas</button></li>
 				<li><button class="btn btn-info">Salir</button></li>
 			</ul>
 		</nav>
@@ -40,32 +40,22 @@
 			</article>
 		</section>
 		<section>
-			<article id="altausuarios">
-				<h2>ALTA USUARIOS</h2>
-				<form action="#" id="frmaltausuarios" name="frmaltausuarios">
-					
-					<input type="text" class="form-control" id="txtnombreusuario" placeholder="Usuario" required>
-
-					<input type="password" class="form-control" id="txtclave" placeholder="Contraseña" required>
-
-					<select name="txtipousuario" id="txtipoususario" class="frm-control">
-						<option value="Vigente">Vigente</option>
-						<option value="Baja">Baja</option>
+			<article id="altaUsuarios">
+				<h2>Alta de Usuarios</h2>
+				<form action="#" id="frmAltaUsuarios" name="frmAltaUsuarios">
+					<input type="text" class="form-control" id="txtNombreUsuario" placeholder="Usuario" name="txtNombreUsuario" required>
+					<input type="password" class="form-control" id="txtClaveUsuario" placeholder="Clave" name="txtClaveUsuario" required>
+					<select name="txtTipoUsuario" id="txtTipoUsuario" class="form-control" required>
+						<option value="vigente">Vigente</option>
+						<option value="baja">Baja</option>
 					</select>
-
-
-					<input type="text" class="form-control" id="txtdepartamento" placeholder="Tipo de Departamento" required>
-					
-
-					<input type="submit" class="btn-success btn-lg btn-block" id="btnaltausuario" name="btnaltausuario" placeholder="Enviar" required>
-			
+					<input type="text" class="form-control" id="txtDepartamento" name="txtDepartamento" placeholder="Departamento" required>
+					<input type="submit" id="btnAltaUsuario" name="btnAltaUsuario" class="btn btn-success btn-lg btn-block">		
 				</form>
-			</article>	
-				
-			<article id="consultausuarios">
-				<h2>LISTADO DE USUARIOS</h2>
-				<table class="table table-striped name="tablaconsultas"id="tablaconsultas">
-					
+			</article>
+			<article id="consultasUsuarios">
+				<h2>Listado de usuarios</h2>
+				<table class="table table-striped" name="tablaConsultas" id="tablaConsultas">
 				</table>
 			</article>
 		</section>
@@ -73,3 +63,6 @@
 	<footer></footer>
 </body>
 </html>
+
+
+
